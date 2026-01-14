@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Premium NFT Platform - Matured Dark Green */
+    --background: 200 15% 8%;
+    --foreground: 45 15% 90%;
+
+    --card: 200 12% 12%;
+    --card-foreground: 45 15% 90%;
+
+    --popover: 200 12% 10%;
+    --popover-foreground: 45 15% 90%;
+
+    /* Matured forest green as primary */
+    --primary: 152 32% 35%;
+    --primary-foreground: 45 15% 95%;
+
+    /* Soft charcoal secondary */
+    --secondary: 200 12% 18%;
+    --secondary-foreground: 45 12% 80%;
+
+    --muted: 200 10% 15%;
+    --muted-foreground: 200 8% 50%;
+
+    /* Deep sage accent */
+    --accent: 158 28% 28%;
+    --accent-foreground: 45 15% 95%;
+
+    --destructive: 0 55% 50%;
+    --destructive-foreground: 45 15% 95%;
+
+    /* Success states */
+    --success: 145 45% 42%;
+    --success-foreground: 45 15% 95%;
+
+    /* Warning/pending states */
+    --warning: 38 70% 50%;
+    --warning-foreground: 200 15% 8%;
+
+    --border: 200 10% 20%;
+    --input: 200 10% 15%;
+    --ring: 152 32% 40%;
+
+    --radius: 0.5rem;
+
+    /* Matured Green Palette */
+    --forest: 152 32% 35%;
+    --forest-muted: 152 22% 25%;
+    --sage: 145 22% 42%;
+    --sage-muted: 145 15% 32%;
+    --moss: 158 28% 28%;
+    --moss-muted: 158 18% 20%;
+    --cream: 45 20% 88%;
+    --charcoal: 200 15% 8%;
+    --charcoal-light: 200 12% 12%;
+    --navy: 210 25% 14%;
+
+    /* Typography */
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    /* Shadows */
+    --shadow-subtle: 0 2px 8px -2px hsl(200 15% 5% / 0.4);
+    --shadow-elevated: 0 8px 32px -8px hsl(200 15% 5% / 0.6);
+    --shadow-glow: 0 0 40px -10px hsl(152 32% 40% / 0.2);
+
+    /* Gradients */
+    --gradient-forest: linear-gradient(135deg, hsl(152 32% 35%) 0%, hsl(145 22% 42%) 100%);
+    --gradient-surface: linear-gradient(180deg, hsl(200 12% 14%) 0%, hsl(200 12% 10%) 100%);
+    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(200 15% 8% / 0.9) 100%);
+
+    --sidebar-background: 200 12% 10%;
+    --sidebar-foreground: 45 12% 85%;
+    --sidebar-primary: 152 32% 35%;
+    --sidebar-primary-foreground: 45 15% 95%;
+    --sidebar-accent: 200 12% 18%;
+    --sidebar-accent-foreground: 45 12% 85%;
+    --sidebar-border: 200 10% 20%;
+    --sidebar-ring: 152 32% 40%;
+  }
+
+  .dark {
+    /* Same as root - this is a dark-first design */
+    --background: 200 15% 8%;
+    --foreground: 45 15% 90%;
+    --card: 200 12% 12%;
+    --card-foreground: 45 15% 90%;
+    --popover: 200 12% 10%;
+    --popover-foreground: 45 15% 90%;
+    --primary: 152 32% 35%;
+    --primary-foreground: 45 15% 95%;
+    --secondary: 200 12% 18%;
+    --secondary-foreground: 45 12% 80%;
+    --muted: 200 10% 15%;
+    --muted-foreground: 200 8% 50%;
+    --accent: 158 28% 28%;
+    --accent-foreground: 45 15% 95%;
+    --destructive: 0 55% 50%;
+    --destructive-foreground: 45 15% 95%;
+    --border: 200 10% 20%;
+    --input: 200 10% 15%;
+    --ring: 152 32% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-medium tracking-tight;
+  }
+}
+
+@layer components {
+  /* Premium card styling */
+  .nft-card {
+    @apply relative overflow-hidden rounded-lg bg-card border border-border/50;
+    @apply transition-all duration-500 ease-out;
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .nft-card:hover {
+    @apply border-primary/30;
+    box-shadow: var(--shadow-elevated), var(--shadow-glow);
+    transform: translateY(-2px);
+  }
+
+  /* Forest gradient text */
+  .text-gradient-forest {
+    background: var(--gradient-forest);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Premium button base */
+  .btn-premium {
+    @apply relative overflow-hidden;
+    @apply px-6 py-3 rounded-md font-medium text-sm tracking-wide;
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .btn-premium-forest {
+    @apply btn-premium bg-primary text-primary-foreground;
+    @apply hover:shadow-lg;
+  }
+
+  .btn-premium-forest:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-premium-outline {
+    @apply btn-premium border border-border bg-transparent text-foreground;
+    @apply hover:border-primary/50 hover:text-primary;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply backdrop-blur-xl bg-card/80 border border-border/50;
+  }
+
+  /* Tab styling */
+  .tab-item {
+    @apply relative px-6 py-3 text-sm font-medium tracking-wide;
+    @apply text-muted-foreground transition-colors duration-300;
+  }
+
+  .tab-item:hover {
+    @apply text-foreground;
+  }
+
+  .tab-item.active {
+    @apply text-primary;
+  }
+
+  .tab-item.active::after {
+    content: '';
+    @apply absolute bottom-0 left-0 right-0 h-0.5 bg-primary;
+  }
+
+  /* Input styling */
+  .input-premium {
+    @apply w-full px-4 py-3 rounded-md;
+    @apply bg-muted border border-border text-foreground;
+    @apply placeholder:text-muted-foreground;
+    @apply focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20;
+    @apply transition-all duration-200;
+  }
+
+  /* Skeleton loading */
+  .skeleton {
+    @apply animate-pulse bg-muted rounded;
+  }
+
+  /* Status badges */
+  .status-pending {
+    @apply text-warning bg-warning/10 border-warning/30;
+  }
+
+  .status-success {
+    @apply text-success bg-success/10 border-success/30;
+  }
+
+  .status-error {
+    @apply text-destructive bg-destructive/10 border-destructive/30;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  /* Subtle text shadow for premium feel */
+  .text-shadow-subtle {
+    text-shadow: 0 2px 10px hsl(225 20% 5% / 0.5);
+  }
+}

@@ -1,0 +1,71 @@
+import { NFT } from '@/types/nft';
+
+export const mockNFTs: NFT[] = [
+  {
+    id: '1',
+    tokenId: '1247',
+    name: 'Ethereal Dawn',
+    description: 'A serene moment captured at the edge of consciousness, where light meets shadow in perfect harmony.',
+    image: 'https://images.unsplash.com/photo-1634017839464-5c339bbe3c35?w=800&q=80',
+    collection: 'Lumina Collection',
+    owner: '0x1234...5678',
+    contractAddress: '0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D',
+  },
+  {
+    id: '2',
+    tokenId: '892',
+    name: 'Obsidian Resonance',
+    description: 'Deep textures emerge from darkness, revealing patterns that speak to the subconscious mind.',
+    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80',
+    collection: 'Abstract Frequencies',
+    owner: '0x1234...5678',
+    contractAddress: '0x23581767a106ae21c074b2276D25e5C3e136a68b',
+  },
+  {
+    id: '3',
+    tokenId: '3401',
+    name: 'Golden Meridian',
+    description: 'Where mathematics meets artistry, geometric precision unfolds in warm metallic tones.',
+    image: 'https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=800&q=80',
+    collection: 'Geometric Dreams',
+    owner: '0x1234...5678',
+    contractAddress: '0xED5AF388653567Af2F388E6224dC7C4b3241C544',
+  },
+  {
+    id: '4',
+    tokenId: '567',
+    name: 'Velvet Horizon',
+    description: 'Soft gradients dissolve into infinity, creating a space for contemplation and wonder.',
+    image: 'https://images.unsplash.com/photo-1549490349-8643362247b5?w=800&q=80',
+    collection: 'Lumina Collection',
+    owner: '0x1234...5678',
+    contractAddress: '0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D',
+  },
+  {
+    id: '5',
+    tokenId: '2089',
+    name: 'Copper Bloom',
+    description: 'Organic forms emerge from industrial materials, celebrating the beauty of transformation.',
+    image: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=800&q=80',
+    collection: 'Material Studies',
+    owner: '0x1234...5678',
+    contractAddress: '0x8a90CAb2b38dba80c64b7734e58Ee1dB38B8992e',
+  },
+  {
+    id: '6',
+    tokenId: '4122',
+    name: 'Silent Architecture',
+    description: 'Minimalist structures cast long shadows, inviting meditation on space and form.',
+    image: 'https://images.unsplash.com/photo-1482686115713-0fbcaced6e28?w=800&q=80',
+    collection: 'Abstract Frequencies',
+    owner: '0x1234...5678',
+    contractAddress: '0x23581767a106ae21c074b2276D25e5C3e136a68b',
+  },
+];
+
+export const collections = [
+  { name: 'Lumina Collection', address: '0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D' },
+  { name: 'Abstract Frequencies', address: '0x23581767a106ae21c074b2276D25e5C3e136a68b' },
+  { name: 'Geometric Dreams', address: '0xED5AF388653567Af2F388E6224dC7C4b3241C544' },
+  { name: 'Material Studies', address: '0x8a90CAb2b38dba80c64b7734e58Ee1dB38B8992e' },
+];
